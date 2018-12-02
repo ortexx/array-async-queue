@@ -1,0 +1,39 @@
+{
+  "name": "array-async-queue",
+  "version": "0.0.1",
+  "description": "Asynchronously go through an array with concurrency and queue",
+  "main": "./index.js",
+  "author": {
+    "name": "Balasyan Alexandr",
+    "email": "mywebstreet@gmail.com"
+  },
+  "keywords": [
+    "chunk",
+    "array",
+    "async",
+    "big",
+    "loop",
+    "queue",
+    "concurrency",
+    "concurrent"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "build": "browserify ./index.js > ./dist/array-async-queue.js"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^5.2.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ortexx/array-async-queue"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "dependencies": {
+    "browserify": "^16.2.3"
+  }
+}
