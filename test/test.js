@@ -43,10 +43,10 @@ describe('arrayAsyncQueue:', function() {
   it('check random resolving', function () {
     let newArr = [];
 
-    return arrayAsyncQueue(arr, 10, (val) => {
+    return arrayAsyncQueue(arr, 10, (val) => {      
       return new Promise((resolve) => {
         setTimeout(resolve, getRandomInt(0, 50));
-      }).then(() => {
+      }).then(() => {;
         newArr.push(val);
       })
     }).then(() => {
@@ -66,4 +66,20 @@ describe('arrayAsyncQueue:', function() {
       assert.equal(counter, arr.length);
     });
   });  
+
+  it('check stopping', function () {
+    let counter = 0;
+
+    return arrayAsyncQueue(arr, 10, (val, stop) => {      
+      return Promise.resolve().then(() => {;
+        counter++;
+
+        if(counter >= 11) {
+          stop();
+        }
+      })
+    }).then(() => {
+      assert.equal(counter, 20);
+    });
+  });
 });
