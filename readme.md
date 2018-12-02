@@ -19,8 +19,14 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-arrayAsyncQueue(arr, concurrency, (val) => {
+arrayAsyncQueue(arr, concurrency, (val, stop) => {
   console.log(val);
+
+  if(getRandomInt(0, 100) >= 99) {
+    // stop the queue if necessary
+    return stop();
+  }
+
   return new Promise(resolve => setTimeout(resolve, getRandomInt(0, 50))
 })
 ```
