@@ -10,7 +10,7 @@
 module.exports = function (arr, limit, fn) {
   return new Promise((resolve, reject) => {
     if(!arr.length) {
-      return;
+      return resolve();
     }
 
     if(limit > arr.length) {
