@@ -1,6 +1,6 @@
 {
   "name": "array-async-queue",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Asynchronously go through an array with concurrency and queue",
   "main": "./index.js",
   "author": {
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^7.2.0"
+    "mocha": "^9.2.0"
   },
   "husky": {
     "hooks": {
